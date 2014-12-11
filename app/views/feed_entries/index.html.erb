@@ -1,0 +1,9 @@
+<div id="jobs_entries">
+  <h3>Job Feed</h3>
+  <% @entries.each do |entry| %>
+  <ul>
+  	<li><%= link_to entry.name, feed_entry_path(entry) %></li>
+  </ul>
+  <% end %>
+</div>
+
