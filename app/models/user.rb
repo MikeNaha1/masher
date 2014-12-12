@@ -10,4 +10,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def find_contacts
+	client = LinkedIn::Client.new
+	client.authorize_from_access("78tgub92xvl8vw", "DugHl3dysh67Y4wn")
+
+	client.profile
+  end
+
 end

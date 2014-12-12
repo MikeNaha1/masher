@@ -1,3 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :linkedin, Rails.application.secrets.omniauth_provider_key, Rails.application.secrets.omniauth_provider_secret
+  provider :linkedin, Rails.application.secrets.omniauth_provider_key, 
+  	Rails.application.secrets.omniauth_provider_secret, 
+  	:scope => 'r_fullprofile r_emailaddress r_network',
+  	:fields => ["id", "email-address", "first-name", "last-name", "headline", "industry", "picture-url", "public-profile-url", "location", "connections"]
 end
